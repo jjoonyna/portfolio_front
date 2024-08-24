@@ -1,0 +1,29 @@
+.home-main{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 24px;
+}
+.home-main .home-title{
+    margin-bottom: 50px;
+    font-size: 32px;
+}
+.home-main .home-link{
+    display: flex;
+    flex-direction: row;
+}
+.home-main .home-link .home-blog{
+    margin: 3rem 2rem;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    background: rgb(26, 188, 4);
+    color: white;
+}
+.home-main .home-link .home-git{
+    margin: 3rem 2rem;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    background: black;
+    color: red;
+}

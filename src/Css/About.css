@@ -1,0 +1,38 @@
+.about{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: steelblue;
+}
+
+.about h1{
+    margin-left: 12px;
+    font-size: 32px;
+}
+.about .aboutme{
+    display: flex;
+    flex-direction: row;
+    margin-top: 18px;
+    margin-bottom: 20px;
+}
+
+.about .aboutme img{
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.about .aboutme .about-card li{
+    margin-top: 20px;  
+    white-space: nowrap;
+}
+
+.about .aboutme .about-card img{
+    width: 16px;
+    height: 16px;
+    object-fit: cover;
+}
+

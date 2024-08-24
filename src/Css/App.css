@@ -1,0 +1,24 @@
+@media (min-width: 1024px) {
+    .App {
+        font-family: Nanum Gothic, sans-serif;
+        position: relative;
+    }
+}
+@media (max-width: 767px) {
+    .App .container {
+        margin: 0 auto;
+        width: 90vw;
+    }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+    .App .container {
+        margin: 0 auto;
+        width: 90vw;
+    }
+}
+@media (min-width: 1024px) {
+    .App .container {
+        margin: 0 auto;
+        width: 90vw;
+    }
+}
