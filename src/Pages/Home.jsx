@@ -1,6 +1,7 @@
 import Header from '../Components/Header'
 import '../Css/Home.css'
 import About from '../Components/About'
+import Skills from '../Components/Skills'
 
 const Home =()=> {
     const NotionClick =()=> {
@@ -14,7 +15,7 @@ const Home =()=> {
     return(
         <div>
             <Header />
-            <main className='main'>
+            <main className='main' id='main'>
                 <div className='home-main'>
                     <h1 className='home-title'>JJoony&apos; s 포트폴리오</h1>
                     <span>안녕하세요</span>
@@ -25,6 +26,7 @@ const Home =()=> {
                     </div>
                 </div>
                 <About />
+                <Skills />
             </main>
         </div>
         

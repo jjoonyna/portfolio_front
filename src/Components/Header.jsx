@@ -14,7 +14,7 @@ const Header=()=>{
                     </div>
                     <nav>
                         <a href='/about'>about</a>
-                        <a href='#'>skils</a>
+                        <a href='/skills'>skils</a>
                         <a href='#'>project</a>
                         <a href='#'>mypage</a>
                     </nav>
