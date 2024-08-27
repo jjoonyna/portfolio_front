@@ -15,7 +15,7 @@ const Home =()=> {
     return(
         <div>
             <Header />
-            <main className='main' id='main'>
+            <main className='main' id='about'>
                 <div className='home-main'>
                     <h1 className='home-title'>JJoony&apos; s 포트폴리오</h1>
                     <span>안녕하세요</span>
@@ -25,8 +25,14 @@ const Home =()=> {
                         <button className='home-blog' onClick={NotionClick}>JJoony&apos; s BLOG</button>
                     </div>
                 </div>
+                <div>
                 <About />
+                </div>
+                <div id='skills'>
                 <Skills />
+                </div>
+                
+
             </main>
         </div>
         

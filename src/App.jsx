@@ -5,13 +5,15 @@ import Skills from './Components/Skills.jsx';
 import './Css/App.css';
 
 
+
 function App() {
-  return(
+    
+    return(
     <BrowserRouter>
-        <Routes>
-            <Route index element={<Home />} />
-            <Route path='about' element={<Home><About /></Home>} />
-            <Route path='skills' element={<Home><Skills /></Home>} />
+        <Routes >
+            <Route index element={<Home />}/>
+            <Route path='about' element={<Home><About /></Home>}/>
+            <Route path='skills' element={<Home><Skills /></Home>}/>
         </Routes>
     </BrowserRouter>
     )
