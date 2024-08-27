@@ -2,6 +2,10 @@ import Header from '../Components/Header'
 import '../Css/Home.css'
 import About from '../Components/About'
 import Skills from '../Components/Skills'
+import Project from '../Components/Project'
+
+
+
 
 const Home =()=> {
     const NotionClick =()=> {
@@ -12,11 +16,13 @@ const Home =()=> {
         window.open('https://github.com/jjoonyna')
     }
 
+    
+
     return(
         <div>
             <Header />
-            <main className='main' id='about'>
-                <div className='home-main'>
+            <main className='main' >
+                <div className='home-main'id='about'>
                     <h1 className='home-title'>JJoony&apos; s 포트폴리오</h1>
                     <span>안녕하세요</span>
                     <span>주니어 풀스택 개발자 나원준입니다.</span>
@@ -26,12 +32,15 @@ const Home =()=> {
                     </div>
                 </div>
                 <div>
-                <About />
+                    <About />
                 </div>
                 <div id='skills'>
-                <Skills />
+                    <Skills />
                 </div>
-                
+                <div id='project'>
+                    <Project />
+                </div>
+
 
             </main>
         </div>
