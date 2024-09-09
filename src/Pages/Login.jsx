@@ -9,17 +9,17 @@ const Login=()=>{
             <div>
                 <Header />
             </div>
-            <div className="login-form">
-                <div className="login-info">
+            <div className="login-info">
+                <form className="login-form">
                     <div>
                         ID
                         <input type="text" className="textid"/>
                     </div>
-                        <div>
+                    <div>
                         Password
-                    <input type="password" className="textpsw" />
+                        <input type="password" className="textpsw" />
                     </div>
-                </div>
+                </form>
                 <div className="login-button">
                     <button>로그인</button>
                 </div>
