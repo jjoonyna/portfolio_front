@@ -12,14 +12,14 @@ import {useState, useEffect} from 'react';
 
 const About =()=> {
     
-    const [user, setUser] = useState(null);
     const [error, setError] = useState('');
     const [meAbout, setMeAbout] = useState([]);
+
     useEffect(()=>{
-        const fetchUser = async()=>{
+        const aboutUser = async()=>{
             try{
                 const response = await axios.get(`http://localhost:80/find_about/admin`);
-                setUser(response.data);
+                const user = response.data;
                 setMeAbout ([
                     {id: 1, image: name, about: user.name},
                     {id: 2, image: birth, about: user.birth},
@@ -31,8 +31,8 @@ const About =()=> {
                 setError('유저 찾을수 없음',error.message);
             }
         }
-        fetchUser();
-    })
+        aboutUser();
+    },[])
 
 
 
