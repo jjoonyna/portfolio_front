@@ -4,12 +4,14 @@ import '../Css/App.css';
 import '../Css/reset.css';
 import '../Css/common.css';
 import { AiFillAliwangwang } from "react-icons/ai";
-
+import React from 'react';
 
 const Header=()=>{
     
     const role =sessionStorage.getItem('role');
-    console.log(role);
+    
+    console.log("역할:"+role);
+
     return (
         <header>
             <div className = 'header-inner'>
@@ -30,4 +32,4 @@ const Header=()=>{
     );
 }
 
-export default Header;
+export default React.memo(Header);

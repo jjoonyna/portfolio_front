@@ -21,17 +21,16 @@ const Login=()=>{
         }
         try{
             const response = await axios.post(`http://localhost:80/login_user`,formdata);
-            setUser(response.data)
+            setUser(response.data);
+            sessionStorage.setItem('role',response.data.role);
+            if(response.data.role !== null){
+                navigate('/admin');
+            }
         }catch(error){
                 alert("잘못 입력 하였습니다.")
                 console.error('에러발생',error);
                 setError('유저 찾을수 없음',error.message);
             
-        }finally{
-            sessionStorage.setItem('role',user.role);
-            if(user.role !== null){
-                navigate('/admin');
-            }
         }
     }
     
