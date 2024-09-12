@@ -7,7 +7,9 @@ import { AiFillAliwangwang } from "react-icons/ai";
 
 
 const Header=()=>{
-
+    
+    const role =sessionStorage.getItem('role');
+    console.log(role);
     return (
         <header>
             <div className = 'header-inner'>
@@ -19,7 +21,8 @@ const Header=()=>{
                         <a href='/#about'>about</a>
                         <a href='/#skills'>skils</a>
                         <a href='/#project'>project</a>
-                        <Link to='/login'><AiFillAliwangwang className='icon'/></Link>
+                        {role===null&&<Link to='/login'><AiFillAliwangwang className='icon'/></Link>}
+                        {role!==null&&<Link to='/admin'><AiFillAliwangwang className='icon'/></Link>}
                     </nav>
                 </div>
             </div>

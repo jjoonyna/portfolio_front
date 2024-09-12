@@ -1,7 +1,7 @@
 import Header from "../Components/Header";
 import '../Css/Login.css'
 import axios from 'axios';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import { useNavigate } from "react-router-dom";
 
 
@@ -10,26 +10,26 @@ const Login=()=>{
     const [error, setError] = useState('');
     const [id, setId] = useState('');
     const [pwd, setPwd] = useState('');
-
+    const [user, setUser] =useState(null);
     
+
     const LoginUser = async(event)=>{
         event.preventDefault();
-        let user = null;
         let formdata = {
             id: id,
             pwd: pwd
         }
         try{
             const response = await axios.post(`http://localhost:80/login_user`,formdata);
-            user= response.data;
+            setUser(response.data)
         }catch(error){
-            alert("유저 정보를 찾을 수 없습니다.");
-            console.error('에러발생',error);
-            setError('유저 찾을수 없음',error.message);
+                alert("잘못 입력 하였습니다.")
+                console.error('에러발생',error);
+                setError('유저 찾을수 없음',error.message);
+            
         }finally{
-            if(user.role === 'ADMIN'){
-                navigate('/admin');
-            }else if(user.role === 'TEST'){
+            sessionStorage.setItem('role',user.role);
+            if(user.role !== null){
                 navigate('/admin');
             }
         }

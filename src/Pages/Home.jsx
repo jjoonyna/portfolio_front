@@ -2,7 +2,7 @@ import Header from '../Components/Header'
 import '../Css/Home.css'
 import About from '../Components/About'
 import Skills from '../Components/Skills'
-import Project from '../Components/Project'
+import ProjectList from '../Components/ProjectList'
 
 
 
@@ -37,8 +37,8 @@ const Home =()=> {
                 <div id='skills'>
                     <Skills />
                 </div>
-                <div id='project'>
-                    <Project />
+                <div id='projectList'>
+                    <ProjectList />
                 </div>
 
 
