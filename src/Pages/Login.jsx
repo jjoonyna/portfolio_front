@@ -23,6 +23,7 @@ const Login=()=>{
             const response = await axios.post(`http://localhost:80/login_user`,formdata);
             setUser(response.data);
             sessionStorage.setItem('role',response.data.role);
+            sessionStorage.setItem('id',response.data.id) 
             if(response.data.role !== null){
                 navigate('/admin');
             }
