@@ -20,10 +20,11 @@ const Login=()=>{
             pwd: pwd
         }
         try{
-            const response = await axios.post(`http://localhost:80/login_user`,formdata);
+            const response = await axios.post(`http://localhost:80/login_user`,formdata, {
+                withCredentials: true  // 쿠키 전송 허용
+            });
             setUser(response.data);
-            sessionStorage.setItem('role',response.data.role);
-            sessionStorage.setItem('id',response.data.id) 
+            sessionStorage.setItem('id',response.data.user);
             if(response.data.role !== null){
                 navigate('/admin');
             }

@@ -4,9 +4,9 @@ import axios from 'axios';
 
 const MyInfo =()=>{
 
+    const userId = sessionStorage.getItem('id');
     const [error, setError] = useState('');
     const [userInfo, setUserInfo] = useState([]);
-    const userId = sessionStorage.getItem('id');
     const [addr, setAddr] = useState('');
     const [email, setEmail] = useState('');
     const [license, setLicense] = useState('');
@@ -35,13 +35,15 @@ const MyInfo =()=>{
             id: userId, addr: addr, email: email, license: license
         }
         try{
-            const response = await axios.put(`http://localhost:80/update_about`,formdata);
+            const response = await axios.put(`http://localhost:80/update_about`,formdata, {
+                withCredentials: true  // 쿠키 전송 허용
+            });
             setAddr(response.data.addr);
             setEmail(response.data.email);
             setLicense(response.data.license);
         }catch(error){
             alert("수정 실패");
-            setError("수저 실패",error.message);
+            setError("수정 실패",error.message);
         }
     }
 

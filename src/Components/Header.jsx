@@ -8,9 +8,9 @@ import React from 'react';
 
 const Header=()=>{
     
-    const role =sessionStorage.getItem('role');
+    const userID =sessionStorage.getItem('id');
     
-    console.log("역할:"+role);
+    console.log("id:"+userID);
 
     return (
         <header>
@@ -23,8 +23,8 @@ const Header=()=>{
                         <a href='/#about'>about</a>
                         <a href='/#skills'>skils</a>
                         <a href='/#project'>project</a>
-                        {role===null&&<Link to='/login'><AiFillAliwangwang className='icon'/></Link>}
-                        {role!==null&&<Link to='/admin'><AiFillAliwangwang className='icon'/></Link>}
+                        {userID===null&&<Link to='/login'><AiFillAliwangwang className='icon'/></Link>}
+                        {userID!==null&&<Link to='/admin'><AiFillAliwangwang className='icon'/></Link>}
                     </nav>
                 </div>
             </div>
