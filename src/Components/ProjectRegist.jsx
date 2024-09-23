@@ -62,7 +62,7 @@ const ProjectResgist=()=>{
         })], { type: 'application/json' }));
         formData.append('image', imageFile); // 이미지 파일 추가
         
-
+        
         try {
             const response = await axios.post(`http://localhost:80/insert_project`, formData, {
                 withCredentials: true  // 쿠키 전송 허용
@@ -80,7 +80,7 @@ const ProjectResgist=()=>{
             alert('등록 실패')
             console.error('에러',error);
             setError('등록 실패',error.message);
-            // navigate(0);
+            navigate(0);
         }
     }
 
