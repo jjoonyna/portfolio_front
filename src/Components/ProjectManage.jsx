@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
-
+import ProjectUpdate from './ProjectUpdate';
 
 
 const ProjectManage=()=>{
@@ -9,6 +9,7 @@ const ProjectManage=()=>{
     const userId = sessionStorage.getItem('id');
     const [error, setError] = useState('');
     const [projectList, setprojectList] = useState([])
+    const [update, setUpdate] = useState(null);
     useEffect(()=>{
         const getProject = async()=>{
             try{
@@ -22,6 +23,7 @@ const ProjectManage=()=>{
     },[])
     
     const DeleteProject =async(no)=>{
+        
         try{
             const response = await axios.delete(`http://localhost:80/delete_project/${no}`, {
                 withCredentials: true  // 쿠키 전송 허용
@@ -33,14 +35,22 @@ const ProjectManage=()=>{
         }
     }
 
+    const ShowUpdate =(no)=>{
+        if(update===no){
+            setUpdate(null);
+        }else{
+            setUpdate(no);
+        }
+    }
+
     return(
         <div>
             <h1>프로젝트 관리</h1>
-            <div>
-                <table>
-                    {projectList.map((pro)=>(
-                        <tbody key={pro.no}>
-                            <th>
+            {projectList.map((pro)=>(
+                <div key={pro.no}>
+                    <table>
+                        <tbody>
+                            <tr>
                                 <td>{pro.subject}</td>
                                 <td>{pro.summary}</td>
                                 <td>{pro.person}</td>
@@ -48,13 +58,14 @@ const ProjectManage=()=>{
                                 <td>{pro.endDate}</td>
                                 <td>{pro.content}</td>
                                 <td>{pro.id}</td>
-                                <td><button>수정</button></td>
+                                <td><button onClick={()=>ShowUpdate(pro.no)}>{update===null?'수정':'취소'}</button></td>
                                 <td><button onClick={()=>DeleteProject(`${pro.no}`)}>삭제</button></td>
-                            </th>
+                            </tr>
                         </tbody>
-                    ))}
-                </table>
-            </div>
+                    </table>
+                    {update===pro.no&&(<ProjectUpdate project={pro}/>)}    
+                </div>
+            ))}
         </div>
 
     )

@@ -32,7 +32,7 @@ const ProjectList=()=>{
                 <table>
                     {projectList.map((pro)=>(
                         <tbody key={pro.no}>
-                            <th>
+                            <tr>
                                 <td>{pro.subject}</td>
                                 <td>{pro.summary}</td>
                                 <td>{pro.person}</td>
@@ -41,7 +41,7 @@ const ProjectList=()=>{
                                 <td><button onClick={()=>onLink(`${pro.link}`)}><img src=''/>링크버튼</button></td>
                                 <td>{pro.content}</td>
                                 <td><img src={pro.image} /></td>
-                            </th>
+                            </tr>
                         </tbody>
                     ))}
                 </table>

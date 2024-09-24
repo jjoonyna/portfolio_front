@@ -1,26 +1,26 @@
 import {useState} from 'react';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const ProjectResgist=()=>{
-
+const ProjectUpdate=({project})=>{
     const navigate = useNavigate();
     const userId = sessionStorage.getItem('id');
     const [error, setError] = useState('');
+    const no = project.no;
     const [inputs, setInputs] = useState({
-        subject: '',
-        summary: '',
-        person: '',
-        startDate: '',
-        endDate: '',
-        content: '',
-        link: '',
-        problem: '',
-        solution: '',
+        subject: project.subject || '',
+        summary: project.summary || '',
+        person: project.person || '',
+        startDate: project.startDate ||'',
+        endDate: project.endDate || '',
+        content: project.content || '',
+        link: project.link || '',
+        problem: project.problem || '',
+        solution: project.solution || '',
         image: '',
     })
     const {subject, summary, person, startDate, endDate, content, link, problem, solution, image} = inputs;
-    
     const onChange=(e)=>{
         const {name, value} = e.target;
         setInputs({
@@ -29,12 +29,13 @@ const ProjectResgist=()=>{
         })
     }
 
-    const InsertProject = async(event)=>{
+    const Update = async(event)=>{
         event.preventDefault();
         const imageFile = document.querySelector('input[type="file"]').files[0];
         const formData = new FormData();
         
         formData.append('project', new Blob([JSON.stringify({
+            no,
             subject,
             summary,
             person,
@@ -50,7 +51,7 @@ const ProjectResgist=()=>{
         
         
         try {
-            const response = await axios.post(`http://localhost:80/insert_project`, formData, {
+            const response = await axios.put(`http://localhost:80/update_project`, formData, {
                 withCredentials: true  // 쿠키 전송 허용
             }, {
                 headers: {
@@ -72,8 +73,7 @@ const ProjectResgist=()=>{
 
     return(
         <div>
-            <h1>프로젝트 등록</h1>
-            <form onSubmit={InsertProject}>
+            <form onSubmit={Update}>
                 <table>
                     <tbody>
                         <tr>
@@ -93,7 +93,7 @@ const ProjectResgist=()=>{
                         <tr>
                             <td>문제<input type="text" name='problem' value={problem} onChange={onChange}/></td>
                             <td>해결<input type="text" name='solution' value={solution} onChange={onChange}/></td> 
-                            <td><button type='submit'>등록</button></td>
+                            <td><button type='submit'>수정 완료</button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -102,4 +102,18 @@ const ProjectResgist=()=>{
     )
 }
 
-export default ProjectResgist;
+ProjectUpdate.propTypes = {
+    project: PropTypes.shape({
+        no : PropTypes.number.isRequired,
+        subject: PropTypes.string.isRequired,
+        summary: PropTypes.string.isRequired,
+        person: PropTypes.number.isRequired,
+        startDate: PropTypes.string.isRequired,
+        endDate: PropTypes.string.isRequired,
+        content: PropTypes.string.isRequired,
+        link: PropTypes.string,
+        problem: PropTypes.string,
+        solution: PropTypes.string,
+    }).isRequired,
+};
+export default ProjectUpdate;
