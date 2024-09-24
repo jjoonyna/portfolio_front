@@ -1,35 +1,33 @@
 .skills {
     margin-top: 50px;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 30px;
     font-size: 32px;
+    box-shadow: 1px 0 8px 1px rgba(0, 0, 0, .25);
+}
+.skills h1 {
+    margin-left: 10px;
 }
 .skills .skills-img {
-    margin-top: 20px;
+    margin-left: 30px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     font-size: 24px;
 }
-.skills .skills-img li{
+.skills .skills-img .skills-card {
+    margin-top: 50px;
+}
+.skills .skills-img .skills-card h3{
+    margin-bottom: 15px;
+}
+.skills .skills-img .skills-card li{
+    margin-left: 20px;
     display: inline-block; 
     list-style-type: none;list-style: none;
 }
-
-.skills .skills-img img{
+.skills .skills-img .skills-card img{
     width: 150px;
     height: 100px;
     object-fit: contain;
 }
-.skills .skills-img .skills-back {
-
-}
-.skills .skills-img .skills-front {
-
-}
-.skills .skills-img .skills-db {
-
-}
-.skills .skills-img .skills-etc {
-
-}
-

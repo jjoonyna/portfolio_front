@@ -1,3 +1,4 @@
+import '../Css/List.css';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
@@ -26,19 +27,23 @@ const ProjectList=()=>{
         window.open(link);
     }
     return(
-        <div>
+        <div className='projectList'>
             <h1>프로젝트 목록</h1>
-            <div>
+            <div className='project-card'>
                 <table>
                     {projectList.map((pro)=>(
                         <tbody key={pro.no}>
                             <tr>
                                 <td>{pro.subject}</td>
+                            </tr>
+                            <tr>
                                 <td>{pro.summary}</td>
                                 <td>{pro.person}</td>
                                 <td>{pro.startDate}</td>
                                 <td>{pro.endDate}</td>
-                                <td><button onClick={()=>onLink(`${pro.link}`)}><img src=''/>링크버튼</button></td>
+                                <td><button onClick={()=>onLink(`${pro.link}`)}>링크버튼</button></td>
+                            </tr>
+                            <tr>
                                 <td>{pro.content}</td>
                                 <td><img src={pro.image} /></td>
                             </tr>

@@ -19,10 +19,10 @@ const Home =()=> {
     
 
     return(
-        <div>
+        <div id='main'>
             <Header />
-            <main className='main' >
-                <div className='home-main'id='about'>
+            <main className='main'>
+                <div className='home-main'>
                     <h1 className='home-title'>JJoony&apos; s 포트폴리오</h1>
                     <span>안녕하세요</span>
                     <span>주니어 풀스택 개발자 나원준입니다.</span>
@@ -31,13 +31,13 @@ const Home =()=> {
                         <button className='home-blog' onClick={NotionClick}>JJoony&apos; s BLOG</button>
                     </div>
                 </div>
-                <div>
+                <div id='about'>
                     <About />
                 </div>
                 <div id='skills'>
                     <Skills />
                 </div>
-                <div id='projectList'>
+                <div id='project'>
                     <ProjectList />
                 </div>
 

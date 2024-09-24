@@ -1,7 +1,5 @@
 @media (max-width: 767px) {
     header {
-        background-color: #fff;
-        box-shadow: 1px 0 8px 1px rgba(0, 0, 0, .25);
         height: 40px;
         left: 0;
         position: -webkit-sticky;
@@ -13,9 +11,7 @@
 }
 @media (min-width: 768px) and (max-width: 1023px) {
     header {
-        background-color: #fff;
-        box-shadow: 1px 0 8px 1px rgba(0, 0, 0, .25);
-        height: 60px;
+        height: 50px;
         left: 0;
         position: -webkit-sticky;
         position: sticky;
@@ -26,13 +22,34 @@
 }
 @media (min-width: 1024px) {
     header {
-        height: 100px;
+        height: 50px;
         left: 0;
         position: -webkit-sticky;
         position: sticky;
         right: 0;
         top: 0;
         z-index: 9999;
+    }
+}
+@media (max-width: 767px) {
+    header hr{
+        border-width: 1px;
+        border-color: #fff;
+        box-shadow: 1px 0 8px 1px rgba(0, 0, 0, .25);
+    }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+    header hr{
+        border-width: 1px;
+        border-color: #fff;
+        box-shadow: 1px 0 8px 1px rgba(0, 0, 0, .25);
+    }
+}
+@media (min-width: 1024px) {
+    header hr{
+        border-width: 1px;
+        border-color: #fff;
+        box-shadow: 1px 0 8px 1px rgba(0, 0, 0, .25);
     }
 }
 @media (min-width: 1024px) {
@@ -46,7 +63,7 @@
     header .header-inner .container {
         align-items: center;
         display: flex;
-        height: 60px;
+        height: 50px;
         justify-content: space-between;
     }
 }
@@ -82,7 +99,7 @@
         align-items: center;
         display: flex;
         font-size: 16px;
-        height: 60px;
+        height: 50px;
         justify-content: space-around;
         margin: 0 auto;
         width: 80%;
@@ -91,7 +108,7 @@
 @media (min-width: 1024px) {
     header .header-inner .container nav {
         display: flex;
-        font-size: 16px;
+        font-size: 20px;
         justify-content: space-between;
         width: 500px;
     }

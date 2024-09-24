@@ -5,7 +5,7 @@
     margin-bottom: 30px;
     margin-left: 20%;
     margin-right: 20%;
-    background-color: #2A5C99;
+    box-shadow: 1px 0 8px 1px rgba(0, 0, 0, .25);
 }
 
 .about h1{
@@ -15,26 +15,40 @@
 .about .aboutme{
     display: flex;
     flex-direction: row;
-    margin-top: 18px;
+    margin-top: 30px;
     margin-bottom: 20px;
 }
 
 .about .aboutme img{
+    margin-top: 2%;
     margin-left: 5%;
     margin-right: 5%;
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     object-fit: cover;
 }
-
+.about .aboutme .about-card{
+    margin-left: 30px;
+}
+.about .aboutme .about-card ul{
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 .about .aboutme .about-card li{
-    margin-top: 20px;  
+    margin-top: 20px;
+    width: calc(100% /2);
     white-space: nowrap;
+    list-style-type: none;list-style: none;
+}
+.about .aboutme .about-card .myinfo{
+    margin-top: 20px;
 }
 
 .about .aboutme .about-card img{
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     object-fit: cover;
 }
 

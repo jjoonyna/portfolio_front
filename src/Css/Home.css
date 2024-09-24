@@ -1,6 +1,5 @@
 .home-main{
     margin-top: 50px;
-    margin-bottom: 50px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -27,4 +26,13 @@
     border-radius: 10px;
     background: black;
     color: red;
+}
+#about{
+    padding-top: 50px
+}
+#skills{
+    padding-top: 50px
+}
+#project{
+    padding-top: 50px
 }

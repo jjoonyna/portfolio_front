@@ -17,7 +17,7 @@ const Header=()=>{
             <div className = 'header-inner'>
                 <div className = 'container'>
                     <div id='logo'>
-                        <Link to='/'>jjoony</Link>
+                        <a href='/#main'>jjoony</a>
                     </div>
                     <nav>
                         <a href='/#about'>about</a>
@@ -27,6 +27,7 @@ const Header=()=>{
                         {userID!==null&&<Link to='/admin'><AiFillAliwangwang className='icon'/></Link>}
                     </nav>
                 </div>
+            <hr/>
             </div>
         </header>
     );

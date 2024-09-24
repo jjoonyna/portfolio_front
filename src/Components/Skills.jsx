@@ -1,4 +1,4 @@
-import '../Css/Skills.css'
+import '../Css/Skills.css';
 import jpa from '../images/jpa.png';
 import java from '../images/java.png';
 import git from '../images/git.png';
@@ -33,11 +33,11 @@ const DBList = [
     {id: 2, image: oracle, alt: 'Oracle'}
 ]
 const Etc = [
-    {id: 1, image: aws, alt: 'AWS'},
-    {id: 2, image: s3, alt: 'S3'},
-    {id: 3, image: ec2, alt: 'Ec2'},
-    {id: 4, image: git, alt: 'Git'},
-    {id: 5, image: github, alt: 'GitHub'}
+    {id: 1, image: git, alt: 'Git'},
+    {id: 2, image: github, alt: 'GitHub'},
+    {id: 3, image: aws, alt: 'AWS'},
+    {id: 4, image: s3, alt: 'S3'},
+    {id: 5, image: ec2, alt: 'Ec2'}
 ]
 
 
@@ -46,7 +46,7 @@ const Skills=()=>{
         <section className='skills'>
             <h1>Sklills</h1>
             <div className='skills-img'>
-                <div className='skills-back'>
+                <div className='skills-card'>
                     <h3>BackEnd</h3>
                     <ul>
                         {BackList.map((back)=>(
@@ -54,7 +54,7 @@ const Skills=()=>{
                         ))}
                     </ul>    
                 </div>
-                <div className='skills-front'>
+                <div className='skills-card'>
                     <h3>FrontEnd</h3>
                     <ul>
                         {FrontList.map((front)=>(
@@ -62,7 +62,7 @@ const Skills=()=>{
                         ))}
                     </ul>
                 </div>
-                <div className='skills-db'>
+                <div className='skills-card'>
                     <h3>Database</h3>
                     <ul>
                         {DBList.map((db)=>(
@@ -70,7 +70,7 @@ const Skills=()=>{
                         ))}
                     </ul>
                 </div>
-                <div className='skills-etc'>
+                <div className='skills-card'>
                     <h3>Etc</h3>
                     <ul>
                         {Etc.map((etc)=>(
