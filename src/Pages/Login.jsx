@@ -1,5 +1,5 @@
 import Header from "../Components/Header";
-import '../Css/Login.css'
+import '../Css/Login.css';
 import axios from 'axios';
 import {useState, useEffect} from 'react';
 import { useNavigate } from "react-router-dom";
@@ -44,7 +44,8 @@ const Login=()=>{
                 <Header />
             </div>
             <div className="login-info">
-                <form onSubmit={LoginUser}>
+                <h1>로그인</h1>
+                <form onSubmit={LoginUser} className="login-form">
                         <div>
                             ID
                             <input type="text" className="textid" value={id} onChange={(e)=>setId(e.target.value)}/>

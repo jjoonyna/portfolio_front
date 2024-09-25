@@ -2,7 +2,7 @@ import '../Css/About.css';
 import me from '../images/me.jpg';
 import name from '../images/name.svg';
 import birth from '../images/birth.svg';
-import address from '../images/address.svg';
+import house from "../images/house.svg";
 import university from '../images/school.svg';
 import mail from '../images/mail.svg';
 import license from '../images/license.svg'
@@ -25,7 +25,7 @@ const About =()=> {
                 setMeAbout ([
                     {id: 1, image: name, about: '이름', content: user.name},
                     {id: 2, image: birth, about: '생년월일', content: user.birth},
-                    {id: 3, image: address, about: '주소', content: user.addr},
+                    {id: 3, image: house, about: '주소', content: user.addr},
                     {id: 4, image: university, about: '학력', content: user.university},
                     {id: 5, image: mail, about: '이메일', content: user.email},
                     {id: 6, image: license, about: '자격증', content: user.license}

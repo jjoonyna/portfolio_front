@@ -1,4 +1,4 @@
-
+import '../Css/Admin.css'
 import Header from '../Components/Header.jsx';
 import {useState} from 'react';
 import MyInfo from '../Components/MyInfo.jsx';
@@ -42,17 +42,19 @@ const Admin=()=>{
             <div>
             <Header />
             </div>
-            <h1>관리자 페이지</h1>
-            <div className='menu'>
-                <ul>
-                    {menuList.map((menu)=>(
-                        <li key={menu.id} ><button onClick={menuChange} value={menu.content}>{menu.content}</button></li>
-                    ))}
-                </ul>
+            <div className='admin'>
+                <h1>관리자 페이지</h1>
+                <div className='menu'>
+                    <ul>
+                        {menuList.map((menu)=>(
+                            <li key={menu.id} ><button onClick={menuChange} value={menu.content}>{menu.content}</button></li>
+                        ))}
+                    </ul>
+                </div>
+                {menu==='내 정보 관리' && <div><MyInfo /></div>}
+                {menu==='프로젝트 관리' && <div><ProjectManage /></div>}
+                {menu==='프로젝트 등록' && <div><ProjectRegist /></div>}
             </div>
-            {menu==='내 정보 관리' && <div><MyInfo /></div>}
-            {menu==='프로젝트 관리' && <div><ProjectManage /></div>}
-            {menu==='프로젝트 등록' && <div><ProjectRegist /></div>}
         </div>
     )
 }

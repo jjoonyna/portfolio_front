@@ -5,6 +5,9 @@
     flex-direction: column;
     font-size: 24px;
 }
+.home-main span{
+    margin-bottom: 20px;
+}
 .home-main .home-title{
     margin-bottom: 50px;
     font-size: 32px;
