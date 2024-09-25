@@ -1,0 +1,37 @@
+.regist{
+    margin: 20px 15%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 700px;
+    height: 450px;
+    box-shadow: 1px 0 8px 1px rgba(0, 0, 0, 0.25);
+}
+.regist h1{
+    width: 180px;
+    height: 35px;
+    font-size: 24px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: 0;
+}
+.regist .regist-form {
+    margin: 20px 30px;
+    font-size: 18px;
+}
+.regist .regist-form .regist-content{
+    margin: 10px 0.2%;
+}
+
+.regist .regist-form .regist-content td input{
+    margin: 10px 0px;
+    width: 100%;
+}
+.regist .regist-form .regist-content td textarea{
+    width: 100%;
+    height: 80px;
+}
+.regist .regist-form .regist-content td button{
+    margin-left: 60%;
+    border-radius: 5px;
+    background-color: white;
+}

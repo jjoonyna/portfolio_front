@@ -23,9 +23,9 @@ const Admin=()=>{
     }
 
     const menuList =[
-        {id: 1, content: '내 정보 관리'}, 
+        {id: 1, content: '프로젝트 등록'},
         {id: 2, content: '프로젝트 관리'}, 
-        {id: 3, content: '프로젝트 등록'},
+        {id: 3, content: '내 정보 관리'}, 
         {id: 4, content: '로그아웃'}
     ];
     const [menu, setMenu] = useState('');
@@ -43,17 +43,22 @@ const Admin=()=>{
             <Header />
             </div>
             <div className='admin'>
-                <h1>관리자 페이지</h1>
-                <div className='menu'>
-                    <ul>
-                        {menuList.map((menu)=>(
-                            <li key={menu.id} ><button onClick={menuChange} value={menu.content}>{menu.content}</button></li>
-                        ))}
-                    </ul>
+                <div className='admin-content'>
+                    <h1><a href='/admin'>관리자 페이지</a></h1>
+                    <div className='menu'>
+                        <ul>
+                            {menuList.map((menu)=>(
+                                <li key={menu.id} ><button onClick={menuChange} value={menu.content}>{menu.content}</button></li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
-                {menu==='내 정보 관리' && <div><MyInfo /></div>}
-                {menu==='프로젝트 관리' && <div><ProjectManage /></div>}
-                {menu==='프로젝트 등록' && <div><ProjectRegist /></div>}
+                <div className='menu-content'>
+                {menu==='' &&<div className='content'><ProjectRegist /></div>}
+                {menu==='내 정보 관리' && <div className='content'><MyInfo /></div>}
+                {menu==='프로젝트 관리' && <div className='content'><ProjectManage /></div>}
+                {menu==='프로젝트 등록' && <div className='content'><ProjectRegist /></div>}
+                        </div>
             </div>
         </div>
     )

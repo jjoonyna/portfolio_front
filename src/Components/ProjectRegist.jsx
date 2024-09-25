@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
+import '../Css/Regist.css';
 
 const ProjectResgist=()=>{
 
@@ -69,30 +70,37 @@ const ProjectResgist=()=>{
             navigate(0);
         }
     }
-
+    
     return(
-        <div>
+        <div className='regist'>
             <h1>프로젝트 등록</h1>
-            <form onSubmit={InsertProject}>
-                <table>
+            <form onSubmit={InsertProject} className='regist-form'>
+                <table className='regist-content'>
                     <tbody>
                         <tr>
-                            <td>제목<input type="text" name='subject' value={subject} onChange={onChange}/></td>
+                            <td colSpan={3}>제목<input type="text" name='subject' value={subject} onChange={onChange}/></td>
+                        </tr>
+                        <tr>
                             <td>대표이미지<input type="file" name='image' value={image} onChange={onChange}/></td> 
+                            <td></td>
+                            <td>링크<input type="text" name='link' value={link} onChange={onChange}/></td>
                         </tr>
                         <tr>
                             <td>인원<input type="text" name='person' value={person} onChange={onChange}/></td> 
                             <td>시작날짜<input type="text" name='startDate' value={startDate} onChange={onChange}/></td>
                             <td>끝날짜<input type="text" name='endDate' value={endDate} onChange={onChange}/></td>
-                            <td>링크<input type="text" name='link' value={link} onChange={onChange}/></td>
                         </tr>
                         <tr>
                             <td>요약<input type="text" name='summary' value={summary} onChange={onChange}/></td>
-                            <td>내용<textarea name='content' value={content} onChange={onChange}></textarea></td>
-                        </tr>
-                        <tr>
                             <td>문제<input type="text" name='problem' value={problem} onChange={onChange}/></td>
                             <td>해결<input type="text" name='solution' value={solution} onChange={onChange}/></td> 
+                        </tr>
+                        <tr>
+                            <td colSpan={3} rowSpan={3}>내용<textarea name='content' value={content} onChange={onChange}></textarea></td>
+                        </tr><tr></tr><tr></tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
                             <td><button type='submit'>등록</button></td>
                         </tr>
                     </tbody>

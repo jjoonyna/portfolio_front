@@ -1,3 +1,4 @@
+import '../Css/Info.css'
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
@@ -68,17 +69,31 @@ const MyInfo =()=>{
     }
 
     return(
-        <div>
+        <div className='updateInfo'>
             <h1>내 정보 수정</h1>
             <div>
-                <form onSubmit={UpdateInfo}>
-                    이름<input type="text" name="name" readOnly="readOnly" value={name}/>
-                    주소<input type="text" name="addr" value={addr} onChange={onChange}/>
-                    생일<input type="text" name="birth" readOnly="readOnly" value={birth}/>
-                    이메일<input type="text" name="email" value={email} onChange={onChange}/>
-                    학력<input type="text" name="university" readOnly="readOnly" value={university}/>
-                    자격증<input type="text" name="license" value={license} onChange={onChange}/>
-                    <button type="submit">수정</button>
+                <form onSubmit={UpdateInfo} className='update-form'>
+                    <div className='update-content'>
+                        이름<input type="text" name="name" readOnly="readOnly" value={name}/>
+                    </div>
+                    <div className='update-content'>
+                        주소<input type="text" name="addr" value={addr} onChange={onChange}/>
+                    </div>
+                    <div  className='update-content'>
+                        생일<input type="text" name="birth" readOnly="readOnly" value={birth}/>
+                    </div>
+                    <div className='update-content'>
+                        이메일<input type="text" name="email" value={email} onChange={onChange}/>
+                    </div>
+                    <div className='update-content'>
+                        학력<input type="text" name="university" readOnly="readOnly" value={university}/>
+                    </div>
+                    <div className='update-content'>
+                        자격증<input type="text" name="license" value={license} onChange={onChange}/>
+                    </div>
+                    <div  className='update-content'>
+                        <button type="submit">수정완료</button>
+                    </div>
                 </form>
             </div>
         </div>
