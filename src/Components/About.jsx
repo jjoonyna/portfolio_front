@@ -13,29 +13,49 @@ import {useState, useEffect} from 'react';
 
 
 const About =()=> {
-    
+    const userId = sessionStorage.getItem('id');
     const [error, setError] = useState('');
     const [meAbout, setMeAbout] = useState([]);
 
     useEffect(()=>{
-        const aboutUser = async()=>{
-            try{
-                const response = await axios.get(`http://localhost:80/find_about/admin`);
-                const user = response.data;
-                setMeAbout ([
-                    {id: 1, image: name, about: '이름', content: user.name},
-                    {id: 2, image: birth, about: '생년월일', content: user.birth},
-                    {id: 3, image: house, about: '주소', content: user.addr},
-                    {id: 4, image: university, about: '학력', content: user.university},
-                    {id: 5, image: mail, about: '이메일', content: user.email},
-                    {id: 6, image: license, about: '자격증', content: user.license}
-                ]);
-            }catch(error){
-                setError('유저 찾을수 없음',error.message);
+        if(userId ==='test'){
+            const aboutUser = async()=>{
+                try{
+                    const response = await axios.get(`http://localhost:80/find_about/${userId}`);
+                    const user = response.data;
+                    setMeAbout ([
+                        {id: 1, image: name, about: '이름', content: user.name},
+                        {id: 2, image: birth, about: '생년월일', content: user.birth},
+                        {id: 3, image: house, about: '주소', content: user.addr},
+                        {id: 4, image: university, about: '학력', content: user.university},
+                        {id: 5, image: mail, about: '이메일', content: user.email},
+                        {id: 6, image: license, about: '자격증', content: user.license}
+                    ]);
+                }catch(error){
+                    setError('유저 찾을수 없음',error.message);
+                }
             }
+            aboutUser();
+        }else{
+            const aboutUser = async()=>{
+                try{
+                    const response = await axios.get(`http://localhost:80/find_about/admin`);
+                    const user = response.data;
+                    setMeAbout ([
+                        {id: 1, image: name, about: '이름', content: user.name},
+                        {id: 2, image: birth, about: '생년월일', content: user.birth},
+                        {id: 3, image: house, about: '주소', content: user.addr},
+                        {id: 4, image: university, about: '학력', content: user.university},
+                        {id: 5, image: mail, about: '이메일', content: user.email},
+                        {id: 6, image: license, about: '자격증', content: user.license}
+                    ]);
+                }catch(error){
+                    setError('유저 찾을수 없음',error.message);
+                }
+            }
+            aboutUser();
         }
-        aboutUser();
-    },[])
+        },[userId])
 
 
     return(

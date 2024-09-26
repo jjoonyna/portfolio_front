@@ -11,18 +11,33 @@ const ProjectList=()=>{
     const [projectList, setprojectList] = useState([])
     
     useEffect(()=>{
-        const getProject = async()=>{
-            try{
-                const response = await axios.get(`http://localhost:80/list_project/test`, {
-                    withCredentials: true  // 쿠키 전송 허용
-                });
-                setprojectList (response.data);
-            }catch(error){
-                setError('프로젝트 가져올수 없음',error.message);
+        if(userId==='test'){
+
+            const getProject = async()=>{
+                try{
+                    const response = await axios.get(`http://localhost:80/list_project/${userId}`, {
+                        withCredentials: true  // 쿠키 전송 허용
+                    });
+                    setprojectList (response.data);
+                }catch(error){
+                    setError('프로젝트 가져올수 없음',error.message);
+                }
             }
+            getProject();
+        }else{
+            const getProject = async()=>{
+                try{
+                    const response = await axios.get(`http://localhost:80/list_project/admin`, {
+                        withCredentials: true  // 쿠키 전송 허용
+                    });
+                    setprojectList (response.data);
+                }catch(error){
+                    setError('프로젝트 가져올수 없음',error.message);
+                }
+            }
+            getProject();
         }
-        getProject();
-    },[])
+    },[userId])
 
     const onLink=(link)=>{
         window.open(link);

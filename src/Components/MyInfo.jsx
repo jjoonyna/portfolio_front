@@ -60,11 +60,11 @@ const MyInfo =()=>{
                 withCredentials: true  // 쿠키 전송 허용
             });
             
-            navigate(0);
+            navigate('/');
         }catch(error){
             alert("수정 실패");
             setError("수정 실패",error.message);
-            // navigate(0);
+            navigate(0);
         }
     }
 

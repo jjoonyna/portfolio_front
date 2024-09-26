@@ -10,6 +10,7 @@ const ProjectManage=()=>{
     const [error, setError] = useState('');
     const [projectList, setprojectList] = useState([])
     const [update, setUpdate] = useState(null);
+
     useEffect(()=>{
         const getProject = async()=>{
             try{
@@ -23,12 +24,11 @@ const ProjectManage=()=>{
     },[])
     
     const DeleteProject =async(no)=>{
-        alert(`정말 삭제하시겠습니까?`);
         try{
             const response = await axios.delete(`http://localhost:80/delete_project/${no}`, {
                 withCredentials: true  // 쿠키 전송 허용
             });
-            navigate(0)
+            navigate('/')
         }catch(error){
             console.log("삭제실패")
             setError('삭제 실패',error.message);

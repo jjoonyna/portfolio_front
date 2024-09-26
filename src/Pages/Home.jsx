@@ -25,7 +25,7 @@ const Home =()=> {
                 <div className='home-main'>
                     <h1 className='home-title'>JJoony&apos; s 포트폴리오</h1>
                     <span>안녕하세요</span>
-                    <span>주니어 풀스택 개발자 나원준입니다.</span>
+                    <span>백엔드 개발자 나원준입니다.</span>
                     <div className='home-link'>
                         <button className='home-git' onClick={GitClick}>JJoony&apos; s GITHUB</button>
                         <button className='home-blog' onClick={NotionClick}>JJoony&apos; s BLOG</button>

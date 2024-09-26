@@ -6,6 +6,10 @@ import ProjectManage from '../Components/ProjectManage.jsx';
 import ProjectRegist from '../Components/ProjectRegist.jsx'
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
+import SkillsManage from '../Components/SkillsManage.jsx';
+import SkillsRegist from '../Components/SkillsRegist.jsx';
+
+
 
 const Admin=()=>{
 
@@ -23,10 +27,12 @@ const Admin=()=>{
     }
 
     const menuList =[
-        {id: 1, content: '프로젝트 등록'},
-        {id: 2, content: '프로젝트 관리'}, 
-        {id: 3, content: '내 정보 관리'}, 
-        {id: 4, content: '로그아웃'}
+        {id: 1, content: 'Project 등록'},
+        {id: 2, content: 'Project 관리'}, 
+        {id: 3, content: 'About 관리'}, 
+        {id: 4, content: 'Skills 등록'},
+        {id: 5, content: 'Skills 관리'},
+        {id: 6, content: '로그아웃'}
     ];
     const [menu, setMenu] = useState('');
 
@@ -55,10 +61,12 @@ const Admin=()=>{
                 </div>
                 <div className='menu-content'>
                 {menu==='' &&<div className='content'><ProjectRegist /></div>}
-                {menu==='내 정보 관리' && <div className='content'><MyInfo /></div>}
-                {menu==='프로젝트 관리' && <div className='content'><ProjectManage /></div>}
-                {menu==='프로젝트 등록' && <div className='content'><ProjectRegist /></div>}
-                        </div>
+                {menu==='About 관리' && <div className='content'><MyInfo /></div>}
+                {menu==='Project 관리' && <div className='content'><ProjectManage /></div>}
+                {menu==='Project 등록' && <div className='content'><ProjectRegist /></div>}
+                {menu==='Skills 관리' && <div className='content'><SkillsManage /></div>}
+                {menu==='Skills 등록' && <div className='content'><SkillsRegist /></div>}            
+                </div>
             </div>
         </div>
     )

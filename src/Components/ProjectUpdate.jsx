@@ -31,11 +31,12 @@ const ProjectUpdate=({project})=>{
     }
 
     const Update = async(event)=>{
-        event.preventDefault();
-        const imageFile = document.querySelector('input[type="file"]').files[0];
-        const formData = new FormData();
-        
-        formData.append('project', new Blob([JSON.stringify({
+
+            event.preventDefault();
+            const imageFile = document.querySelector('input[type="file"]').files[0];
+            const formData = new FormData();
+            
+            formData.append('project', new Blob([JSON.stringify({
             no,
             subject,
             summary,
@@ -59,17 +60,18 @@ const ProjectUpdate=({project})=>{
                     'Content-Type': 'multipart/form-data'
                 }
             });
-                if(response.data === 1){
-                    navigate('/');
-                }else if(response.data ===-3){
-                    alert('이미지를 선택해주세요');
-                }
+            if(response.data === 1){
+                navigate('/');
+            }else if(response.data ===-3){
+                alert('이미지를 선택해주세요');
+            }
         }catch(error){
             alert('등록 실패')
             console.error('에러',error);
             setError('등록 실패',error.message);
             navigate(0);
         }
+   
     }
 
     return(
@@ -102,7 +104,7 @@ const ProjectUpdate=({project})=>{
                         <tr>
                             <td></td>
                             <td></td>
-                            <td><button type='submit'>등록</button></td>
+                            <td><button type='submit'>수정완료</button></td>
                         </tr>
                     </tbody>
                 </table>
