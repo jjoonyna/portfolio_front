@@ -24,7 +24,7 @@ const SkillsManage=()=>{
             }
         }
         getSkills();
-    },[])
+    },[userId])
     
     const DeleteProject =async(skill)=>{
         try{

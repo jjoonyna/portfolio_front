@@ -80,13 +80,13 @@ const MyInfo =()=>{
                         주소<input type="text" name="addr" value={addr} onChange={onChange}/>
                     </div>
                     <div  className='update-content'>
-                        생일<input type="text" name="birth" readOnly="readOnly" value={birth}/>
+                        생일<input type="text" name="birth" onChange={onChange} value={birth}/>
                     </div>
                     <div className='update-content'>
                         이메일<input type="text" name="email" value={email} onChange={onChange}/>
                     </div>
                     <div className='update-content'>
-                        학력<input type="text" name="university" readOnly="readOnly" value={university}/>
+                        학력<input type="text" name="university" onChange={onChange} value={university}/>
                     </div>
                     <div className='update-content'>
                         자격증<input type="text" name="license" value={license} onChange={onChange}/>

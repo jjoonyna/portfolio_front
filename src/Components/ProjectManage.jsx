@@ -21,7 +21,7 @@ const ProjectManage=()=>{
             }
         }
         getProject();
-    },[])
+    },[userId])
     
     const DeleteProject =async(no)=>{
         try{

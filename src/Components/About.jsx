@@ -6,7 +6,7 @@ import house from "../images/house.svg";
 import university from '../images/school.svg';
 import mail from '../images/mail.svg';
 import license from '../images/license.svg'
-
+import test from '../images/test.svg'
 import axios from 'axios';
 import {useState, useEffect} from 'react';
 
@@ -62,7 +62,9 @@ const About =()=> {
         <section className="about">
             <h1>About Me</h1>
             <div className="aboutme">
-                <img src={me} alt="내사진" />
+                {userId==='test' && <img src={test} alt='test사진' />}
+                {userId==='' && <img src={me} alt='내사진' />}
+                {userId==='admin' && <img src={me} alt='내사진' />}
                 <div className='about-card'>
                     <ul>
                         {meAbout.map((me)=>(
