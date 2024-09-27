@@ -1,7 +1,7 @@
 import '../Css/Skills.css';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
-import {useNavigate} from 'react-router-dom';
+
 
 const Skills=()=>{
     const userId = sessionStorage.getItem('id')
@@ -42,7 +42,7 @@ const Skills=()=>{
             }
             getSkills();
         }
-    }, [])
+    }, [userId])
 
     useEffect(() => {
         if (skillList.length > 0) {
