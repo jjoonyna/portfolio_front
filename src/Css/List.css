@@ -22,7 +22,7 @@
     border-right: 0.5px solid #ccc;
 }
 .projectList .project-card .card-img img{
-    width: 400px;
+    width: 500px;
     height: 300px;
     object-fit: fill;
 }
