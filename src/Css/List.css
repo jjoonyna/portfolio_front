@@ -22,9 +22,9 @@
     border-right: 0.5px solid #ccc;
 }
 .projectList .project-card .card-img img{
-    width: 500px;
-    height: 290px;
-    object-fit: contain;
+    width: 400px;
+    height: 300px;
+    object-fit: fill;
 }
 .projectList .project-card table{
     border-collapse : collapse;
@@ -38,4 +38,10 @@
 .projectList .project-card table td button{
     border: 0;
     background-color: transparent;
+}
+.projectList .project-card table td p{
+    margin-top: 5px;
+    text-align: left;
+    white-space: pre-wrap;
+    tab-size: 4;
 }

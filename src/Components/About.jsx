@@ -63,7 +63,7 @@ const About =()=> {
             <h1>About Me</h1>
             <div className="aboutme">
                 {userId==='test' && <img src={test} alt='test사진' />}
-                {userId==='' && <img src={me} alt='내사진' />}
+                {userId===null && <img src={me} alt='내사진' />}
                 {userId==='admin' && <img src={me} alt='내사진' />}
                 <div className='about-card'>
                     <ul>

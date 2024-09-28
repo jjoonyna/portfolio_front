@@ -74,7 +74,7 @@ const ProjectList=()=>{
                                 <td colSpan={4}>{pro.summary}</td>
                             </tr>
                             <tr>
-                                <td colSpan={4} rowSpan={4}>{pro.content}</td>
+                                <td colSpan={4} rowSpan={4}>{pro.content.split('\n').map((line, index)=>(<p key={index}>{line}<br/></p>))}</td>
                             </tr>
                             <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
                         </tbody>
