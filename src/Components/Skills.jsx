@@ -16,7 +16,7 @@ const Skills=()=>{
         if(userId==='test'){
             const getSkills =async()=>{
                 try{
-                    const response = await axios.get(`http://jjoony-portfolio.site/list_skills/${userId}`,{
+                    const response = await axios.get(`https://jjoony-portfolio.site/list_skills/${userId}`,{
                         withCredentials: true
                     })
                     console.log("skill::::"+response.data);
@@ -30,7 +30,7 @@ const Skills=()=>{
         }else{
             const getSkills =async()=>{
                 try{
-                    const response = await axios.get(`http://jjoony-portfolio.site/list_skills/admin`,{
+                    const response = await axios.get(`https://jjoony-portfolio.site/list_skills/admin`,{
                         withCredentials: true
                     })
                     console.log("skill::::"+response.data);

@@ -37,7 +37,7 @@ const SkillsRegist=()=>{
         
         
         try {
-            const response = await axios.post(`http://jjoony-portfolio.site/insert_skills`, formData, {
+            const response = await axios.post(`https://jjoony-portfolio.site/insert_skills`, formData, {
                 withCredentials: true  // 쿠키 전송 허용
             }, {
                 headers: {
