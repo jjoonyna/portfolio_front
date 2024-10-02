@@ -14,7 +14,7 @@ const SkillsManage=()=>{
     useEffect(()=>{
         const getSkills = async()=>{
             try{
-                const response = await axios.get(`https://jjoony-portfolio.site/list_skills/${userId}`,{
+                const response = await axios.get(`https://api.jjoony-portfolio.site/list_skills/${userId}`,{
                     withCredentials: true
                 })
                 console.log("skill::::"+response.data);
@@ -28,7 +28,7 @@ const SkillsManage=()=>{
     
     const DeleteProject =async(skill)=>{
         try{
-            const response = await axios.delete(`https://jjoony-portfolio.site/delete_skills/${skill}`, {
+            const response = await axios.delete(`https://api.jjoony-portfolio.site/delete_skills/${skill}`, {
                 withCredentials: true  // 쿠키 전송 허용
             });
             navigate('/')

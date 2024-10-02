@@ -18,7 +18,7 @@ const Admin=()=>{
 
     const Logout =async()=>{
         try{
-            const response = await axios.get("https://jjoony-portfolio.site/logout");
+            const response = await axios.get("https://api.jjoony-portfolio.site/logout");
             sessionStorage.clear();
             navigate('/');
         }catch(error){

@@ -21,7 +21,7 @@ const About =()=> {
         if(userId ==='test'){
             const aboutUser = async()=>{
                 try{
-                    const response = await axios.get(`https://jjoony-portfolio.site/find_about/${userId}`);
+                    const response = await axios.get(`https://api.jjoony-portfolio.site/find_about/${userId}`);
                     const user = response.data;
                     setMeAbout ([
                         {id: 1, image: name, about: '이름', content: user.name},
@@ -39,7 +39,7 @@ const About =()=> {
         }else{
             const aboutUser = async()=>{
                 try{
-                    const response = await axios.get(`https://jjoony-portfolio.site/find_about/admin`);
+                    const response = await axios.get(`https://api.jjoony-portfolio.site/find_about/admin`);
                     const user = response.data;
                     setMeAbout ([
                         {id: 1, image: name, about: '이름', content: user.name},

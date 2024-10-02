@@ -14,7 +14,7 @@ const ProjectManage=()=>{
     useEffect(()=>{
         const getProject = async()=>{
             try{
-                const response = await axios.get(`https://jjoony-portfolio.site/list_project/${userId}`);
+                const response = await axios.get(`https://api.jjoony-portfolio.site/list_project/${userId}`);
                 setprojectList (response.data);
             }catch(error){
                 setError('프로젝트 가져올수 없음',error.message);
@@ -25,7 +25,7 @@ const ProjectManage=()=>{
     
     const DeleteProject =async(no)=>{
         try{
-            const response = await axios.delete(`https://jjoony-portfolio.site/delete_project/${no}`, {
+            const response = await axios.delete(`https://api.jjoony-portfolio.site/delete_project/${no}`, {
                 withCredentials: true  // 쿠키 전송 허용
             });
             navigate('/')

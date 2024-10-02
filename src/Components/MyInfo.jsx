@@ -31,7 +31,7 @@ const MyInfo =()=>{
     useEffect(()=>{
         const GetUser = async()=>{
             try{
-                const response = await axios.get(`https://jjoony-portfolio.site/find_about/${userId}`, {
+                const response = await axios.get(`https://api.jjoony-portfolio.site/find_about/${userId}`, {
                     withCredentials: true  // 쿠키 전송 허용
                 });
                 setInputs({

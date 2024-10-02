@@ -53,7 +53,7 @@ const ProjectUpdate=({project})=>{
         
         
         try {
-            const response = await axios.put(`https://jjoony-portfolio.site/update_project`, formData, {
+            const response = await axios.put(`https://api.jjoony-portfolio.site/update_project`, formData, {
                 withCredentials: true  // 쿠키 전송 허용
             }, {
                 headers: {

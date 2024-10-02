@@ -15,7 +15,7 @@ const ProjectList=()=>{
 
             const getProject = async()=>{
                 try{
-                    const response = await axios.get(`https://jjoony-portfolio.site/list_project/${userId}`, {
+                    const response = await axios.get(`https://api.jjoony-portfolio.site/list_project/${userId}`, {
                         withCredentials: true  // 쿠키 전송 허용
                     });
                     setprojectList (response.data);
@@ -27,7 +27,7 @@ const ProjectList=()=>{
         }else{
             const getProject = async()=>{
                 try{
-                    const response = await axios.get(`https://jjoony-portfolio.site/list_project/admin`, {
+                    const response = await axios.get(`https://api.jjoony-portfolio.site/list_project/admin`, {
                         withCredentials: true  // 쿠키 전송 허용
                     });
                     setprojectList (response.data);

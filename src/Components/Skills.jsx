@@ -12,37 +12,29 @@ const Skills=()=>{
     const [Database, setDatabase] = useState([]);
     const [Etc, setEtc] = useState([]);
 
-    useEffect(()=>{
-        if(userId==='test'){
-            const getSkills =async()=>{
-                try{
-                    const response = await axios.get(`https://jjoony-portfolio.site/list_skills/${userId}`,{
-                        withCredentials: true
-                    })
-                    console.log("skill::::"+response.data);
+    useEffect(() => {
+        const getSkills = async () => {
+            try {
+                const response = await axios.get(userId === 'test' 
+                    ? `https://api.jjoony-portfolio.site/list_skills/${userId}` 
+                    : `https://api.jjoony-portfolio.site/list_skills/admin`, {
+                    withCredentials: true
+                });
+                
+                console.log("skill::::", response.data);
+                
+                if (Array.isArray(response.data)) {
                     setSkillList(response.data);
-                    
-                }catch(error){
-                    setError('가져오기 실패',error.message);
+                } else {
+                    console.error('Expected an array but got:', response.data);
                 }
+                
+            } catch (error) {
+                setError(`가져오기 실패: ${error.message}`);
             }
-            getSkills();
-        }else{
-            const getSkills =async()=>{
-                try{
-                    const response = await axios.get(`https://jjoony-portfolio.site/list_skills/admin`,{
-                        withCredentials: true
-                    })
-                    console.log("skill::::"+response.data);
-                    setSkillList(response.data);
-                    
-                }catch(error){
-                    setError('가져오기 실패',error.message);
-                }
-            }
-            getSkills();
-        }
-    }, [userId])
+        };
+        getSkills();
+    }, [userId]);
 
     useEffect(() => {
         if (skillList.length > 0) {

@@ -20,7 +20,7 @@ const Login=()=>{
             pwd: pwd
         }
         try{
-            const response = await axios.post(`https://jjoony-portfolio.site/login_user`,formdata, {
+            const response = await axios.post(`https://api.jjoony-portfolio.site/login_user`,formdata, {
                 withCredentials: true  // 쿠키 전송 허용
             });
             setUser(response.data);

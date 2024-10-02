@@ -51,7 +51,7 @@ const ProjectResgist=()=>{
         
         
         try {
-            const response = await axios.post(`https://jjoony-portfolio.site/insert_project`, formData, {
+            const response = await axios.post(`https://api.jjoony-portfolio.site/insert_project`, formData, {
                 withCredentials: true  // 쿠키 전송 허용
             }, {
                 headers: {
