@@ -71,7 +71,8 @@ const ProjectList=()=>{
                                 <td colSpan={2}>Git링크: <button onClick={()=>onLink(`${pro.link}`)}><FaGithub size={30}/></button></td>
                             </tr>
                             <tr>
-                                <td colSpan={4}>{pro.summary}</td>
+                                <td colSpan={2}>{pro.summary}</td>
+                                <td colSpan={2}></td>
                             </tr>
                             <tr>
                                 <td colSpan={4} rowSpan={4}>{pro.content.split('\n').map((line, index)=>(<p key={index}>{line}<br/></p>))}</td>
